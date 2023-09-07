@@ -2,11 +2,12 @@
 A simple local file server built on ESP32. 
 
 The ESP32 should have an SD card reader plugged in due to storage limitations on the board. You should wire the card reader the following way:
+```
 MISO > Pin 13
 MOSI > Pin 12
 SCK > Pin 14
 CS > Pin 27
-
+```
 To upload files to the server you need to send it a properly formatted HTML header. You can see what it looks like in the client-side script.
 
 Order of operations:
