@@ -1,5 +1,5 @@
 # ESP32-file-server
-A simple local file server built on ESP32. 
+A simple local file server built on ESP32-WROOM-32. 
 
 The ESP32 should have an SD card reader plugged in due to storage limitations on the board. You should wire the card reader the following way:
 ```
@@ -17,3 +17,9 @@ Order of operations:
 4. ESP32 checks readability of both sockets and once either of them can be read, it accepts the connection request.
 5. ESP32 processes the request. If you're sending a file to it, it receives it at and saves it at the location specified in the header in chunks of 15kb. If you're accessing the receiving end, it looks for all the previously uploaded files and sets up a HTML page with the name and location of each file as well as the links to download them.
 6. Once the request is processed, the connection is closed.
+
+Limitations:
+Due to the buffer size on ESP32-WROOM-32, the upload and download speeds are about 30kb/s. This can be increased.
+
+Purpose:
+This script was built for a simple syncing of small files accross multiple devices. It technically can handle bigger files, but that application is not practical.
